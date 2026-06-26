@@ -1,7 +1,7 @@
-import { fileURLToPath } from "node:url";
-import { defineConfig } from "vitest/config";
+const fromFileUrl = (url) =>
+  decodeURIComponent(url.pathname).replace(/^\/([A-Za-z]:)/, "$1");
 
-export default defineConfig({
+const config = {
   esbuild: {
     jsx: "automatic",
     jsxImportSource: "react",
@@ -16,7 +16,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": fromFileUrl(new URL("./src", import.meta.url)),
     },
   },
-});
+};
+
+export default config;

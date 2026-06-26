@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     "India's Interactive Space Science and Mission Exploration Platform.",
   applicationName: "AstraSetu",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   metadataBase: new URL("https://astrasetu.local"),
 };
 
